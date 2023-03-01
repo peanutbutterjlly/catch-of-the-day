@@ -1,9 +1,9 @@
-import React from "react";
-import Fish from "./Fish";
-import Header from "./Header";
-import Inventory from "./Inventory";
-import Order from "./Order";
-import sampleFishes from "../sample-fishes";
+import React from 'react';
+import sampleFishes from '../sample-fishes';
+import Fish from './Fish';
+import Header from './Header';
+import Inventory from './Inventory';
+import Order from './Order';
 
 export default class App extends React.Component {
   state = {
@@ -36,7 +36,10 @@ export default class App extends React.Component {
           </ul>
         </div>
         <Order />
-        <Inventory addFish={this.addFish} loadSampleFishes={this.loadSampleFishes} />
+        <Inventory
+          addFish={this.addFish}
+          loadSampleFishes={this.loadSampleFishes}
+        />
       </div>
     );
   }
