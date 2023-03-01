@@ -9,6 +9,7 @@ export default class StorePicker extends React.Component {
     const storeName = this.myInput.current.value;
     this.props.history.push(`/store/${storeName}`);
   };
+
   render() {
     return (
       <form className="store-selector" onSubmit={this.goToStore}>
