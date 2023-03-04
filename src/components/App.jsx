@@ -1,4 +1,5 @@
 import React from 'react';
+import base from '../base';
 import sampleFishes from '../sample-fishes';
 import Fish from './Fish';
 import Header from './Header';
@@ -10,6 +11,18 @@ export default class App extends React.Component {
     fishes: {},
     order: {},
   };
+
+  componentDidMount() {
+    const { params } = this.props.match;
+    this.ref = base.syncState(`${params.storeId}/fishes`, {
+      context: this,
+      state: 'fishes',
+    });
+  }
+
+  componentWillUnmount() {
+    base.removeBinding(this.ref);
+  }
 
   addFish = (fish) => {
     // 1. Take a copy of the existing state
