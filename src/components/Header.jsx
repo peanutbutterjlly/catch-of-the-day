@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 export default function Header(props) {
   return (
     <header className="top">
@@ -15,3 +17,7 @@ export default function Header(props) {
     </header>
   );
 }
+
+Header.propTypes = {
+  tagline: PropTypes.string.isRequired,
+};

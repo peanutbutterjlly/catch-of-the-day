@@ -1,4 +1,6 @@
+import PropTypes from 'prop-types';
 import React from 'react';
+
 import base from '../base';
 import sampleFishes from '../sample-fishes';
 import Fish from './Fish';
@@ -7,6 +9,14 @@ import Inventory from './Inventory';
 import Order from './Order';
 
 export default class App extends React.Component {
+  static propTypes = {
+    match: PropTypes.shape({
+      params: PropTypes.shape({
+        storeId: PropTypes.string.isRequired,
+      }).isRequired,
+    }).isRequired,
+  };
+
   state = {
     fishes: {},
     order: {},
