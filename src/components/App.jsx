@@ -122,6 +122,7 @@ export default class App extends React.Component {
           fishes={this.state.fishes}
           loadSampleFishes={this.loadSampleFishes}
           updateFish={this.updateFish}
+          storeId={this.props.match.params.storeId}
         />
       </div>
     );
